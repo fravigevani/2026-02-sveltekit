@@ -1,0 +1,53 @@
+/* Light Mode (default) */
+:root {
+	/* Background */
+	--color-background-primary: #ffffff;
+
+	/* Content */
+	--color-content-primary: #1a1a1a;
+	--color-content-secondary: #666666;
+
+	/* Link */
+	--color-link-default: #1a1a1a;
+
+	/* Filter */
+	--color-filter-background-selected: #5e63ce;
+	--color-filter-content-selected: #ffffff;
+}
+
+/* Dark Mode */
+:root[data-theme="dark"],
+.dark {
+	/* Background */
+	--color-background-primary: #040404;
+
+	/* Content */
+	--color-content-primary: #fafafa;
+	--color-content-secondary: #989898;
+
+	/* Link */
+	--color-link-default: #fafafa;
+
+	/* Filter */
+	--color-filter-background-selected: #5e63ce;
+	--color-filter-content-selected: #fafafa;
+}
+
+/* Prefer dark scheme system preference */
+@media (prefers-color-scheme: dark) {
+	:root:not([data-theme="light"]) {
+		/* Background */
+		--color-background-primary: #040404;
+
+		/* Content */
+		--color-content-primary: #fafafa;
+		--color-content-secondary: #989898;
+
+		/* Link */
+		--color-link-default: #fafafa;
+
+		/* Filter */
+		--color-filter-background-selected: #5e63ce;
+		--color-filter-content-selected: #fafafa;
+	}
+}
