@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { imgVector, imgVector1, imgSun } from "$lib/constants/images";
-  import { theme, toggleTheme } from "$lib/stores/theme";
+  import { imgVector, imgVector1 } from "$lib/constants/images";
+  import { toggleTheme } from "$lib/stores/theme";
 
   type Props = {
     label?: string;
@@ -37,7 +37,7 @@
   }
 
   function getThemeIcon() {
-    return $theme === "dark" ? imgVector1 : imgSun;
+    return imgVector1;
   }
 </script>
 
@@ -66,22 +66,22 @@
     {/if}
 
     {#if isThemeToggle}
-      <div class="icon-slot">
-        <div class="icon-clip">
-          <div class="icon-inner">
-            <img alt="" class="icon-img theme-icon" src={getThemeIcon()} />
-          </div>
-        </div>
+  <div class="icon-slot">
+    <div class="icon-clip">
+      <div class="icon-inner">
+        <img alt="" class="icon-img theme-icon" src={getThemeIcon()} />
       </div>
-    {:else if showTrailingIcon}
-      <div class="icon-slot trailing">
-        <div class="icon-clip">
-          <div class="icon-inner">
-            <img alt="" class="icon-img" src={hovered ? iconHoverSrc : iconSrc} />
-          </div>
-        </div>
+    </div>
+  </div>
+{:else if showTrailingIcon}
+  <div class="icon-slot trailing">
+    <div class="icon-clip">
+      <div class="icon-inner">
+        <img alt="" class="icon-img" src={hovered ? iconHoverSrc : iconSrc} />
       </div>
-    {/if}
+    </div>
+  </div>
+{/if}
   </div>
 </button>
 
@@ -155,20 +155,24 @@
   }
 
   .theme-toggle {
-    padding: 8px;
-  }
+  padding: 8px;
+}
 
-  .theme-toggle .theme-icon {
-    filter: none;
-  }
+.theme-toggle .theme-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: none;
+}
 
-  :root[data-theme="light"] .theme-toggle .theme-icon {
-    filter: brightness(0) saturate(100%) invert(13%) sepia(6%) saturate(0%) hue-rotate(0deg) brightness(96%) contrast(95%);
-  }
+:root[data-theme="light"] .theme-toggle .theme-icon {
+  filter: brightness(0) saturate(100%) invert(12%) sepia(8%) saturate(0%)
+    hue-rotate(0deg) brightness(95%) contrast(92%);
+}
 
-  :root:not([data-theme="light"]) .theme-toggle .theme-icon {
-    filter: brightness(0) saturate(100%) invert(100%);
-  }
+:root:not([data-theme="light"]) .theme-toggle .theme-icon {
+  filter: brightness(0) saturate(100%) invert(100%);
+}
 
   @media (max-width: 640px) {
     .link-desktop {
