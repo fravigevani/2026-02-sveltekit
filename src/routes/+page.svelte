@@ -10,7 +10,13 @@
     imgImg2,
     imgImg3,
     imgImg4,
-    imgImg5
+    imgImg5,
+    imgImg_Dark,
+    imgImg1_Dark,
+    imgImg2_Dark,
+    imgImg3_Dark,
+    imgImg4_Dark,
+    imgImg5_Dark
   } from "$lib/constants/images";
 
   let selectedFilter: "luce naturale" | "luce artificiale" = $state("luce naturale");
@@ -25,12 +31,12 @@
   ];
 
   const cardsLight = [
-    { src: imgImg4, title: "Una lettera", subtitle: "21.30", description: "Un messaggio sospeso nello spazio e nel tempo." },
-    { src: imgImg, title: "Omaggio ad un maestro", subtitle: "22:00", description: "Un tributo alla magia del cinema e della luce artificiale." },
-    { src: imgImg5, title: "Fra le braccia di Morfeo", subtitle: "23:30", description: "Il sonno catturato attraverso la luce notturna." },
-    { src: imgImg1, title: "Che ore sono", subtitle: "22:41", description: "Il tempo artificiale scandisce i nostri ritmi." },
-    { src: imgImg2, title: "E guardo il mondo da un oblò", subtitle: "22:30", description: "Una prospettiva circolare sulla notte." },
-    { src: imgImg3, title: "Metafora", subtitle: "23:00", description: "La luce artificiale come metafora della memoria." }
+    { src: imgImg_Dark, title: "Una lettera", subtitle: "21:30", description: "Un messaggio sospeso nello spazio e nel tempo." },
+    { src: imgImg1_Dark, title: "Omaggio ad un maestro", subtitle: "22:00", description: "Un tributo alla magia del cinema e della luce artificiale." },
+    { src: imgImg2_Dark, title: "E guardo il mondo da un oblò", subtitle: "22:30", description: "Una prospettiva circolare sulla notte." },
+    { src: imgImg3_Dark, title: "Che ore sono", subtitle: "22:41", description: "Il tempo artificiale scandisce i nostri ritmi." },
+    { src: imgImg4_Dark, title: "Metafora", subtitle: "23:00", description: "La luce artificiale come metafora della memoria." },
+    { src: imgImg5_Dark, title: "Fra le braccia di Morfeo", subtitle: "23:30", description: "Il sonno catturato attraverso la luce notturna." }
   ];
 
   const heroText =
@@ -53,15 +59,15 @@
       <TopBar />
     </div>
 
-    <section class="px-[var(--spacing-12)] py-[var(--spacing-13)]">
+    <section class="px-[var(--spacing-12)] py-[var(--spacing-13)] lg:px-[var(--spacing-12)] lg:py-[var(--spacing-13)] md:px-[var(--spacing-7)] md:py-[var(--spacing-12)] sm:px-[var(--spacing-5)] sm:py-[var(--spacing-6)]">
       <p class="hero-text">{heroText}</p>
     </section>
 
-    <section class="px-[var(--spacing-12)] flex flex-col gap-[var(--spacing-7)]">
+    <section class="px-[var(--spacing-12)] flex flex-col gap-[var(--spacing-7)] lg:px-[var(--spacing-12)] lg:gap-[var(--spacing-7)] md:px-[var(--spacing-7)] md:gap-[var(--spacing-7)] sm:px-[var(--spacing-5)] sm:gap-[var(--spacing-4)]">
       <NavigationBar active={selectedFilter} on:change={handleFilterChange} />
 
-      <div class="grid grid-cols-2 gap-x-[24px] gap-y-[24px] w-full pb-[var(--spacing-12)]">
-        {#each $theme === 'dark' ? cardsDark : cardsLight as card}
+      <div class="grid gap-x-[24px] gap-y-[24px] w-full pb-[var(--spacing-12)] grid-cols-2 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 md:gap-x-[24px] md:gap-y-[24px] sm:gap-x-[16px] sm:gap-y-[16px]">
+        {#each selectedFilter === 'luce artificiale' ? cardsLight : cardsDark as card}
           <Card src={card.src} title={card.title} subtitle={card.subtitle} description={card.description} />
         {/each}
       </div>
@@ -86,6 +92,20 @@
     margin: 0;
   }
 
+  @media (max-width: 1024px) {
+    .hero-text {
+      font-size: var(--spacing-7);
+      max-width: 664px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .hero-text {
+      font-size: var(--spacing-5);
+      max-width: 354px;
+    }
+  }
+
   .footer-logo {
     display: flex;
     justify-content: center;
@@ -93,9 +113,22 @@
     padding: var(--spacing-5) 0;
   }
 
+  @media (max-width: 640px) {
+    .footer-logo {
+      padding: var(--spacing-3) 0;
+    }
+  }
+
   .footer-logo-shell {
     width: 201px;
     height: 78px;
+  }
+
+  @media (max-width: 640px) {
+    .footer-logo-shell {
+      width: 150px;
+      height: 58px;
+    }
   }
 
   .footer-logo-shell img {
@@ -107,5 +140,17 @@
   .page-shell {
     width: min(100%, 1512px);
     margin: 0 auto;
+  }
+
+  @media (max-width: 1024px) {
+    .page-shell {
+      width: min(100%, 744px);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .page-shell {
+      width: min(100%, 402px);
+    }
   }
 </style>

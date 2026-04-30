@@ -14,13 +14,21 @@ export const imgRefresh = "https://www.figma.com/api/mcp/asset/0f819b6d-8a3d-448
 export const imgHome = "https://www.figma.com/api/mcp/asset/47ed967a-9ccb-4939-8f22-eec4847dccae";
 export const imgIconFileFolderOpen24Px = "https://www.figma.com/api/mcp/asset/92037f2c-948c-454c-ba2b-68047c66d2f3";
 
-// Card images
+// Card images - Light Mode (Luce Naturale)
 export const imgImg = "https://www.figma.com/api/mcp/asset/549ca101-dbb6-4ccf-a89b-73350f3c0ca5";
 export const imgImg1 = "https://www.figma.com/api/mcp/asset/e44dc3a5-cdd2-4aad-8bbc-0272493cb142";
 export const imgImg2 = "https://www.figma.com/api/mcp/asset/84ae6c9e-64c2-45c9-a6b6-5fb8314cd7b2";
 export const imgImg3 = "https://www.figma.com/api/mcp/asset/63d1deac-568f-4a90-96bf-b8e224de54cf";
 export const imgImg4 = "https://www.figma.com/api/mcp/asset/59fe4382-c145-4389-93f1-ace5dab92806";
 export const imgImg5 = "https://www.figma.com/api/mcp/asset/bd0bdceb-bc1d-4358-bb8e-770d43c404f2";
+
+// Card images - Dark Mode (Luce Artificiale) - from Tablet/Mobile dark design
+export const imgImg_Dark = "https://www.figma.com/api/mcp/asset/d4239f2c-6e4d-48d9-b323-708620a158ca";
+export const imgImg1_Dark = "https://www.figma.com/api/mcp/asset/ca769a40-a860-4fbc-8573-efe969501efb";
+export const imgImg2_Dark = "https://www.figma.com/api/mcp/asset/99b2e3fe-90e7-459e-b871-d82e1e3d0c1c";
+export const imgImg3_Dark = "https://www.figma.com/api/mcp/asset/d5cb7166-8c23-46c4-a995-860478e4f700";
+export const imgImg4_Dark = "https://www.figma.com/api/mcp/asset/4466ba9c-1c16-4810-a9f7-bec8ccfd2efe";
+export const imgImg5_Dark = "https://www.figma.com/api/mcp/asset/a1efda13-01df-4403-af1e-c1392f9ca04d";
 
 // Logo
 export const imgPolitecnicoBianco1 = "https://www.figma.com/api/mcp/asset/f117a0e8-ceb4-4f18-9535-626e1e03f247";
