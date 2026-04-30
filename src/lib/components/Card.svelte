@@ -148,7 +148,11 @@
   .card-hover-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, var(--color-link-hover, #5e63ce) 100%);
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      var(--color-link-hover, #5e63ce) 100%
+    );
     opacity: 0.4;
     transition: opacity 0.2s ease;
   }
@@ -174,7 +178,7 @@
     white-space: nowrap;
     font-family: var(--font-primary);
     font-size: var(--spacing-5);
-    color: #fafafa;
+    color: var(--color-content-primary);
   }
 
   @media (max-width: 640px) {
@@ -190,12 +194,12 @@
   }
 
   .card-title {
-    color: #fafafa;
+    color: var(--color-content-primary);
   }
 
   .card-divider,
   .card-subtitle {
-    color: #989898;
+    color: var(--color-content-secondary);
   }
 
   .card-flip-hint,
@@ -205,13 +209,14 @@
     gap: 8px;
     font-family: var(--font-secondary);
     font-size: 16px;
-    color: #fafafa;
+    color: var(--color-content-primary);
   }
 
   .chevron {
     width: 16px;
     height: 16px;
     position: relative;
+    color: currentColor;
   }
 
   .chevron::before,
@@ -243,8 +248,8 @@
     flex-direction: column;
     justify-content: space-between;
     flex: 1;
-    background: var(--color-background-secondary, #191919);
-    color: #fafafa;
+    background: var(--color-background-secondary);
+    color: var(--color-content-primary);
     padding: 40px 24px 24px;
     box-sizing: border-box;
   }
@@ -266,7 +271,7 @@
     font-family: var(--font-primary);
     font-size: var(--spacing-7);
     line-height: 1;
-    color: #fafafa;
+    color: var(--color-content-primary);
   }
 
   @media (max-width: 640px) {
@@ -277,7 +282,7 @@
 
   .card-back-description {
     margin: 0;
-    color: #fafafa;
+    color: var(--color-content-primary);
     font-family: var(--font-primary);
     font-size: 24px;
     line-height: 1.2;

@@ -35,18 +35,6 @@
     align-items: center;
   }
 
-  @media (max-width: 1024px) {
-    .navigation-bar {
-      gap: var(--spacing-5);
-    }
-  }
-
-  @media (max-width: 640px) {
-    .navigation-bar {
-      gap: var(--spacing-4);
-    }
-  }
-
   .filter-pill {
     display: inline-flex;
     align-items: center;
