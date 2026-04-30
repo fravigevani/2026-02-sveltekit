@@ -82,7 +82,7 @@
     gap: 12px;
     border: none;
     background: transparent;
-    padding: 0 0 16px 0;
+    padding: 0 0 24px 0;
     cursor: pointer;
     overflow: hidden;
     border-radius: var(--radius-m);
@@ -93,6 +93,7 @@
     .card-root {
       height: 503px;
       gap: 12px;
+      padding: 0 0 20px 0;
     }
   }
 
@@ -115,12 +116,6 @@
     overflow: hidden;
     border-top-left-radius: var(--radius-m);
     border-top-right-radius: var(--radius-m);
-  }
-
-  @media (max-width: 1024px) {
-    .card-image-shell {
-      height: 445px;
-    }
   }
 
   @media (max-width: 640px) {
@@ -148,7 +143,11 @@
   .card-hover-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, var(--color-link-hover, #5e63ce) 100%);
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      var(--color-link-hover, #5e63ce) 100%
+    );
     opacity: 0.4;
     transition: opacity 0.2s ease;
   }
@@ -159,6 +158,12 @@
     justify-content: space-between;
     width: 100%;
     padding: 0 24px;
+  }
+
+  @media (max-width: 1024px) {
+    .card-meta {
+      padding: 0 20px;
+    }
   }
 
   @media (max-width: 640px) {
@@ -174,7 +179,7 @@
     white-space: nowrap;
     font-family: var(--font-primary);
     font-size: var(--spacing-5);
-    color: #fafafa;
+    color: var(--color-content-primary);
   }
 
   @media (max-width: 640px) {
@@ -190,12 +195,12 @@
   }
 
   .card-title {
-    color: #fafafa;
+    color: var(--color-content-primary);
   }
 
   .card-divider,
   .card-subtitle {
-    color: #989898;
+    color: var(--color-content-secondary);
   }
 
   .card-flip-hint,
@@ -205,37 +210,22 @@
     gap: 8px;
     font-family: var(--font-secondary);
     font-size: 16px;
-    color: #fafafa;
+    color: var(--color-content-primary);
+    flex-shrink: 0;
   }
 
   .chevron {
-    width: 16px;
-    height: 16px;
-    position: relative;
-  }
-
-  .chevron::before,
-  .chevron::after {
-    content: "";
-    position: absolute;
-    width: 2px;
-    height: 100%;
-    background: currentColor;
-    top: 0;
-    left: 50%;
-    transform-origin: center;
-  }
-
-  .chevron::before {
-    transform: translateX(-50%) rotate(45deg);
-  }
-
-  .chevron::after {
-    transform: translateX(-50%) rotate(-45deg);
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    transform: rotate(45deg);
+    flex-shrink: 0;
+    margin-right: 2px;
   }
 
   .chevron.flipped {
-    transform: rotate(180deg);
+    transform: rotate(135deg);
   }
 
   .card-back {
@@ -243,22 +233,28 @@
     flex-direction: column;
     justify-content: space-between;
     flex: 1;
-    background: var(--color-background-secondary, #191919);
-    color: #fafafa;
-    padding: 40px 24px 24px;
+    background: var(--color-background-secondary);
+    color: var(--color-content-primary);
+    padding: 32px 24px 24px;
     box-sizing: border-box;
+  }
+
+  @media (max-width: 1024px) {
+    .card-back {
+      padding: 28px 20px 20px;
+    }
   }
 
   @media (max-width: 640px) {
     .card-back {
-      padding: 20px 12px 12px;
+      padding: 16px 12px 12px;
     }
   }
 
   .card-back-copy {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 20px;
   }
 
   .card-back-title {
@@ -266,7 +262,7 @@
     font-family: var(--font-primary);
     font-size: var(--spacing-7);
     line-height: 1;
-    color: #fafafa;
+    color: var(--color-content-primary);
   }
 
   @media (max-width: 640px) {
@@ -277,7 +273,7 @@
 
   .card-back-description {
     margin: 0;
-    color: #fafafa;
+    color: var(--color-content-primary);
     font-family: var(--font-primary);
     font-size: 24px;
     line-height: 1.2;

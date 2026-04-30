@@ -1,17 +1,20 @@
 <script lang="ts">
   import LinkDesktop from "./LinkDesktop.svelte";
-  import { imgVector1 } from "$lib/constants/images";
 </script>
 
 <div class="top-bar">
   <p class="brand">F-V</p>
 
   <div class="top-actions">
-    <LinkDesktop label="About" showTrailingIcon={false} />
-    <LinkDesktop 
-      label="" 
-      iconSrc={imgVector1} 
-      iconHoverSrc={imgVector1}
+    <LinkDesktop
+      label="About"
+      showLeadingIcon={false}
+      showTrailingIcon={false}
+    />
+
+    <LinkDesktop
+      label=""
+      showLeadingIcon={false}
       showTrailingIcon={false}
       isThemeToggle={true}
     />
@@ -24,18 +27,18 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    padding: var(--spacing-6) var(--spacing-12);
+    padding: var(--spacing-6) 0;
   }
 
   @media (max-width: 1024px) {
     .top-bar {
-      padding: var(--spacing-6) var(--spacing-7);
+      padding: var(--spacing-6) 0;
     }
   }
 
   @media (max-width: 640px) {
     .top-bar {
-      padding: var(--spacing-3) var(--spacing-5);
+      padding: var(--spacing-3) 0;
     }
   }
 

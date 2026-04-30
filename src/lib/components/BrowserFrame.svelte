@@ -4,6 +4,7 @@
     imgClose,
     imgCurveR,
     imgContainer,
+    imgContainer1,
     imgContainer2,
     imgBack,
     imgForward,
@@ -16,7 +17,7 @@
 <div class="browser-frame">
   <div class="toolbar tabs-row">
     <div class="tab active">
-      <div class="tab-favicon"></div>
+      <div class="tab-favicon" />
       <span>Alfabeto fotografico</span>
       <div class="tab-close">
         <img alt="close" src={imgClose} />
