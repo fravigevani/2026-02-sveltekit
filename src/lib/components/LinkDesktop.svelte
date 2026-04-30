@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { imgVector } from "$lib/constants/images";
+  import { imgVector, imgVector1, imgSun } from "$lib/constants/images";
   import { theme, toggleTheme } from "$lib/stores/theme";
 
   type Props = {
@@ -35,6 +35,10 @@
       toggleTheme();
     }
   }
+
+  function getThemeIcon() {
+    return $theme === "dark" ? imgVector1 : imgSun;
+  }
 </script>
 
 <button
@@ -65,7 +69,7 @@
       <div class="icon-slot">
         <div class="icon-clip">
           <div class="icon-inner">
-            <img alt="" class="icon-img theme-icon" src={$theme === 'dark' ? iconSrc : iconHoverSrc} />
+            <img alt="" class="icon-img theme-icon" src={getThemeIcon()} />
           </div>
         </div>
       </div>
@@ -154,12 +158,16 @@
     padding: 8px;
   }
 
-  .theme-toggle.hovered {
-    background: var(--color-background-secondary);
-  }
-
   .theme-toggle .theme-icon {
     filter: none;
+  }
+
+  :root[data-theme="light"] .theme-toggle .theme-icon {
+    filter: brightness(0) saturate(100%) invert(13%) sepia(6%) saturate(0%) hue-rotate(0deg) brightness(96%) contrast(95%);
+  }
+
+  :root:not([data-theme="light"]) .theme-toggle .theme-icon {
+    filter: brightness(0) saturate(100%) invert(100%);
   }
 
   @media (max-width: 640px) {

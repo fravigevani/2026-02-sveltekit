@@ -1,21 +1,20 @@
 <script lang="ts">
   import LinkDesktop from "./LinkDesktop.svelte";
-  import { imgVector1 } from "$lib/constants/images";
 </script>
 
 <div class="top-bar">
   <p class="brand">F-V</p>
 
   <div class="top-actions">
-		<LinkDesktop
-	label="About"
-	showLeadingIcon={false}
-	showTrailingIcon={false}
-	/>
-    <LinkDesktop 
-      label="" 
-      iconSrc={imgVector1} 
-      iconHoverSrc={imgVector1}
+    <LinkDesktop
+      label="About"
+      showLeadingIcon={false}
+      showTrailingIcon={false}
+    />
+
+    <LinkDesktop
+      label=""
+      showLeadingIcon={false}
       showTrailingIcon={false}
       isThemeToggle={true}
     />

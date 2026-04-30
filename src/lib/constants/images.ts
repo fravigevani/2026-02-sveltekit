@@ -13,6 +13,7 @@ export const imgForward = "https://www.figma.com/api/mcp/asset/ad527fa7-176c-43c
 export const imgRefresh = "https://www.figma.com/api/mcp/asset/0f819b6d-8a3d-4482-b9ce-32e04907b645";
 export const imgHome = "https://www.figma.com/api/mcp/asset/47ed967a-9ccb-4939-8f22-eec4847dccae";
 export const imgIconFileFolderOpen24Px = "https://www.figma.com/api/mcp/asset/92037f2c-948c-454c-ba2b-68047c66d2f3";
+export const imgSun = "https://www.figma.com/api/mcp/asset/84-609";
 
 // Card images - Light Mode (Luce Naturale)
 export const imgImg = "https://www.figma.com/api/mcp/asset/549ca101-dbb6-4ccf-a89b-73350f3c0ca5";
