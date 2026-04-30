@@ -1,25 +1,40 @@
 <script lang="ts">
-	import LinkDesktop from "./LinkDesktop.svelte";
+  import LinkDesktop from "./LinkDesktop.svelte";
+  import { imgVector1 } from "$lib/constants/images";
 </script>
 
-<div
-	class="flex items-center justify-between px-[var(--spacing-12)] py-[var(--spacing-6)] w-full"
->
-	<p class="font-primary font-medium leading-[22px] text-[24px] text-[var(--color-link-default)] text-center whitespace-nowrap">
-		W-D
-	</p>
-	<div class="flex gap-[24px] items-center">
-		<LinkDesktop />
-		<LinkDesktop />
-	</div>
+<div class="top-bar">
+  <p class="brand">F-V</p>
+
+  <div class="top-actions">
+    <LinkDesktop label="About" showTrailingIcon={false} />
+    <LinkDesktop label="" iconSrc={imgVector1} showTrailingIcon={false} />
+  </div>
 </div>
 
 <style>
-	:global(.font-primary) {
-		font-family: var(--font-primary);
-	}
+  .top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: var(--spacing-6) var(--spacing-12);
+  }
 
-	:global(.font-medium) {
-		font-weight: var(--font-weight-medium);
-	}
+  .brand {
+    margin: 0;
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-medium);
+    font-size: 24px;
+    line-height: 22px;
+    color: var(--color-link-default);
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .top-actions {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
 </style>
