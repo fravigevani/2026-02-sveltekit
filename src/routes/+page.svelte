@@ -22,22 +22,82 @@
   let selectedFilter: "luce naturale" | "luce artificiale" = $state("luce naturale");
 
   const cardsDark = [
-    { src: imgImg4, title: "Dalla mia finestra", subtitle: "9:30", description: "Uno scorcio che mette in luce il tempo sospeso tra interno ed esterno." },
-    { src: imgImg, title: "Anafora", subtitle: "12:00", description: "Un momento catturato nella luce calda del mezzogiorno." },
-    { src: imgImg5, title: "L'isola che c'è", subtitle: "14:30", description: "Un paesaggio urbano che respira tra architettura e natura." },
-    { src: imgImg1, title: "La musica di un luogo", subtitle: "17:23", description: "Un interno poetico dove la luce e gli oggetti raccontano una storia." },
-    { src: imgImg2, title: "Il perimetro del cielo", subtitle: "18:00", description: "Un cielo che taglia l'orizzonte e porta il tempo nella fotografia." },
-    { src: imgImg3, title: "Mosca cieca", subtitle: "19:30", description: "Dettagli notturni e ombre che giocano sul confine del visibile." }
-  ];
+  {
+    src: imgImg4,
+    title: "Dalla mia finestra",
+    subtitle: "9:30",
+    description: "Un frammento di paesaggio osservato dal proprio punto di vista."
+  },
+  {
+    src: imgImg,
+    title: "Anafora",
+    subtitle: "12:00",
+    description: "La fotografia diventa figura retorica e significato."
+  },
+  {
+    src: imgImg5,
+    title: "L'isola che c'è",
+    subtitle: "14:30",
+    description: "Un piccolo segno di natura dentro la vita di tutti i giorni."
+  },
+  {
+    src: imgImg1,
+    title: "La musica di un luogo",
+    subtitle: "17:23",
+    description: "La fotografia cerca ritmo, armonia ed emozione."
+  },
+  {
+    src: imgImg2,
+    title: "Il perimetro del cielo",
+    subtitle: "18:00",
+    description: "Un taglio di cielo che isola lo sguardo."
+  },
+  {
+    src: imgImg3,
+    title: "Mosca Cieca",
+    subtitle: "19:30",
+    description: "Uno sguardo incerto che perde i riferimenti abituali."
+  }
+];
 
-  const cardsLight = [
-    { src: imgImg_Dark, title: "Una lettera", subtitle: "21:30", description: "Un messaggio sospeso nello spazio e nel tempo." },
-    { src: imgImg1_Dark, title: "Omaggio ad un maestro", subtitle: "22:00", description: "Un tributo alla magia del cinema e della luce artificiale." },
-    { src: imgImg2_Dark, title: "E guardo il mondo da un oblò", subtitle: "22:30", description: "Una prospettiva circolare sulla notte." },
-    { src: imgImg3_Dark, title: "Che ore sono", subtitle: "22:41", description: "Il tempo artificiale scandisce i nostri ritmi." },
-    { src: imgImg4_Dark, title: "Metafora", subtitle: "23:00", description: "La luce artificiale come metafora della memoria." },
-    { src: imgImg5_Dark, title: "Fra le braccia di Morfeo", subtitle: "23:30", description: "Il sonno catturato attraverso la luce notturna." }
-  ];
+const cardsLight = [
+  {
+    src: imgImg_Dark,
+    title: "Una lettera",
+    subtitle: "21:30",
+    description: "Una lettera isolata diventa immagine e presenza."
+  },
+  {
+    src: imgImg1_Dark,
+    title: "Omaggio ad un maestro",
+    subtitle: "22:00",
+    description: "L'immagine racconta una presenza attraverso il suo contesto."
+  },
+  {
+    src: imgImg2_Dark,
+    title: "E guardo il mondo da un oblò",
+    subtitle: "22:30",
+    description: "Uno sguardo insolito su uno spazio domestico nascosto."
+  },
+  {
+    src: imgImg3_Dark,
+    title: "Che ore sono",
+    subtitle: "22:41",
+    description: "La fotografia fissa l'istante e il suo passaggio."
+  },
+  {
+    src: imgImg4_Dark,
+    title: "Metafora",
+    subtitle: "23:00",
+    description: "La fotografia diventa figura retorica e significato."
+  },
+  {
+    src: imgImg5_Dark,
+    title: "Fra le braccia di Morfeo",
+    subtitle: "23:30",
+    description: "Un angolo di quiete dedicato al sonno e al riposo."
+  }
+];
 
   const heroText =
     "Queste fotografie nascono dall'osservazione del quotidiano e trasformano spazi e oggetti in tracce di memoria, presenza e racconto. La luce, naturale o artificiale, cambia la percezione delle cose nell'arco della giornata e anche il tempo entra nelle immagini in modo visibile, non solo come tema ma come sequenza di momenti, abitudini e variazioni che raccontano il passare delle ore.";
@@ -98,15 +158,15 @@
     padding-block: 48px;
   }
 
-  .hero-text {
-    max-width: 893px;
-    margin: 0;
-    font-family: var(--font-primary);
-    font-weight: var(--font-weight-regular);
-    font-size: clamp(2rem, 1.2rem + 2vw, 3rem);
-    line-height: 1;
-    color: var(--color-content-primary);
-  }
+.hero-text {
+  max-width: 760px;
+  margin: 0;
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-regular);
+  font-size: clamp(1.25rem, 0.95rem + 1.1vw, 2rem);
+  line-height: 1.08;
+  color: var(--color-content-primary);
+}
 
   .content-section {
     display: flex;
