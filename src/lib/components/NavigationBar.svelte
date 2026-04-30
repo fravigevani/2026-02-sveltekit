@@ -35,6 +35,18 @@
     align-items: center;
   }
 
+  @media (max-width: 1024px) {
+    .navigation-bar {
+      gap: var(--spacing-5);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .navigation-bar {
+      gap: var(--spacing-4);
+    }
+  }
+
   .filter-pill {
     display: inline-flex;
     align-items: center;
@@ -49,6 +61,20 @@
     font-size: var(--spacing-5);
     white-space: nowrap;
     transition: background-color 0.2s ease, transform 0.1s ease;
+  }
+
+  @media (max-width: 1024px) {
+    .filter-pill {
+      font-size: var(--spacing-5);
+      padding: var(--spacing-2) var(--spacing-4);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .filter-pill {
+      font-size: 16px;
+      padding: var(--spacing-2) var(--spacing-4);
+    }
   }
 
   .filter-pill:hover {

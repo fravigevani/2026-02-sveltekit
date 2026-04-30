@@ -40,6 +40,7 @@
 <button
   class="link-desktop"
   class:hovered={hovered}
+  class:theme-toggle-light={isThemeToggle && $theme === 'light'}
   type="button"
   onmouseenter={handleMouseEnter}
   onmouseleave={handleMouseLeave}
@@ -106,6 +107,13 @@
     transition: color 0.15s ease;
   }
 
+  @media (max-width: 640px) {
+    .link-label {
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+
   .link-desktop.hovered .link-label {
     color: var(--color-link-hover);
   }
@@ -144,5 +152,9 @@
 
   .link-desktop.hovered .icon-img {
     filter: brightness(0) saturate(100%) invert(0.4) sepia(1) saturate(2) hue-rotate(240deg) brightness(1.2);
+  }
+
+  .link-desktop.theme-toggle-light .icon-img {
+    filter: brightness(1.5) sepia(1) hue-rotate(40deg) saturate(1.5);
   }
 </style>
