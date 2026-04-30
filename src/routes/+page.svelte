@@ -47,8 +47,8 @@
   }
 
   $effect(() => {
-    if (typeof document !== 'undefined') {
-      document.documentElement.setAttribute('data-theme', $theme);
+    if (typeof document !== "undefined") {
+      document.documentElement.setAttribute("data-theme", $theme);
     }
   });
 </script>
@@ -59,16 +59,21 @@
       <TopBar />
     </div>
 
-    <section class="px-[var(--spacing-12)] py-[var(--spacing-13)] lg:px-[var(--spacing-12)] lg:py-[var(--spacing-13)] md:px-[var(--spacing-7)] md:py-[var(--spacing-12)] sm:px-[var(--spacing-5)] sm:py-[var(--spacing-6)]">
+    <section class="hero-section">
       <p class="hero-text">{heroText}</p>
     </section>
 
-    <section class="px-[var(--spacing-12)] flex flex-col gap-[var(--spacing-7)] lg:px-[var(--spacing-12)] lg:gap-[var(--spacing-7)] md:px-[var(--spacing-7)] md:gap-[var(--spacing-7)] sm:px-[var(--spacing-5)] sm:gap-[var(--spacing-4)]">
+    <section class="content-section">
       <NavigationBar active={selectedFilter} on:change={handleFilterChange} />
 
-      <div class="grid gap-x-[24px] gap-y-[24px] w-full pb-[var(--spacing-12)] grid-cols-2 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 md:gap-x-[24px] md:gap-y-[24px] sm:gap-x-[16px] sm:gap-y-[16px]">
-        {#each selectedFilter === 'luce artificiale' ? cardsLight : cardsDark as card}
-          <Card src={card.src} title={card.title} subtitle={card.subtitle} description={card.description} />
+      <div class="cards-grid">
+        {#each selectedFilter === "luce artificiale" ? cardsLight : cardsDark as card}
+          <Card
+            src={card.src}
+            title={card.title}
+            subtitle={card.subtitle}
+            description={card.description}
+          />
         {/each}
       </div>
     </section>
@@ -82,53 +87,51 @@
 </div>
 
 <style>
+  .page-shell {
+    width: 100%;
+    max-width: 1512px;
+    margin: 0 auto;
+    padding-inline: 24px;
+  }
+
+  .hero-section {
+    padding-block: 48px;
+  }
+
   .hero-text {
+    max-width: 893px;
+    margin: 0;
     font-family: var(--font-primary);
     font-weight: var(--font-weight-regular);
-    font-size: var(--spacing-7);
+    font-size: clamp(2rem, 1.2rem + 2vw, 3rem);
     line-height: 1;
-    max-width: 893px;
     color: var(--color-content-primary);
-    margin: 0;
   }
 
-  @media (max-width: 1024px) {
-    .hero-text {
-      font-size: var(--spacing-7);
-      max-width: 664px;
-    }
+  .content-section {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    padding-bottom: 48px;
   }
 
-  @media (max-width: 640px) {
-    .hero-text {
-      font-size: var(--spacing-5);
-      max-width: 354px;
-    }
+  .cards-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    width: 100%;
   }
 
   .footer-logo {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: var(--spacing-5) 0;
-  }
-
-  @media (max-width: 640px) {
-    .footer-logo {
-      padding: var(--spacing-3) 0;
-    }
+    padding: 20px 0;
   }
 
   .footer-logo-shell {
-    width: 201px;
-    height: 78px;
-  }
-
-  @media (max-width: 640px) {
-    .footer-logo-shell {
-      width: 150px;
-      height: 58px;
-    }
+    width: 150px;
+    height: 58px;
   }
 
   .footer-logo-shell img {
@@ -137,20 +140,50 @@
     object-fit: contain;
   }
 
-  .page-shell {
-    width: min(100%, 1512px);
-    margin: 0 auto;
-  }
-
-  @media (max-width: 1024px) {
+  @media (min-width: 641px) {
     .page-shell {
-      width: min(100%, 744px);
+      padding-inline: 32px;
+    }
+
+    .hero-section {
+      padding-block: 48px;
+    }
+
+    .hero-text {
+      max-width: 664px;
+    }
+
+    .cards-grid {
+      gap: 24px;
+    }
+
+    .footer-logo-shell {
+      width: 180px;
+      height: 70px;
     }
   }
 
-  @media (max-width: 640px) {
+  @media (min-width: 1025px) {
     .page-shell {
-      width: min(100%, 402px);
+      padding-inline: 48px;
+    }
+
+    .hero-section {
+      padding-block: 52px;
+    }
+
+    .hero-text {
+      max-width: 893px;
+    }
+
+    .cards-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .footer-logo-shell {
+      width: 201px;
+      height: 78px;
     }
   }
 </style>
